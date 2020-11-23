@@ -1,0 +1,17 @@
+version: '3'
+services:
+    node:
+        image: oberonamsterdam/pm2-git:8-alpine
+        restart: always
+        network_mode: "bridge"
+        volumes:
+            - .:/app/:delegated
+            - $HOME/.ssh/id_rsa:/root/.ssh/id_rsa
+            - $HOME/.ssh/known_hosts:/root/.ssh/known_hosts
+        environment:
+            - "VIRTUAL_HOST=${DOCKER_VHOST}"
+            - "HTTPS_METHOD=${DOCKER_HTTPS_METHOD}"
+            - "LETSENCRYPT_HOST=${DOCKER_LETSENCRYPT_HOST}"
+            - "LETSENCRYPT_EMAIL=${DOCKER_LETSENCRYPT_EMAIL}"
+        entrypoint:
+            - /app/start.sh

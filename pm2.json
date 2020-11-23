@@ -1,0 +1,12 @@
+{
+    "apps": [
+        {
+            "name": "oberon-website",
+            "script": "npm",
+            "args": "start -- -p 80",
+            "env": {
+                "NODE_ENV": "production"
+            }
+        }
+    ]
+}
