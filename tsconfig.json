@@ -3,7 +3,10 @@
         "target": "esnext",
         "module": "esnext",
         "jsx": "preserve",
-        "lib": ["dom", "es2017"],
+        "lib": [
+            "dom",
+            "es2017"
+        ],
         "downlevelIteration": true,
         "sourceMap": true,
         "allowJs": true,
@@ -23,6 +26,14 @@
         "isolatedModules": true,
         "noEmit": true
     },
-    "exclude": ["node_modules"],
-    "include": ["typings/*.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"]
+    "exclude": [
+        "node_modules",
+        "src/generated/graphql.tsx"
+    ],
+    "include": [
+        "typings/*.d.ts",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js"
+    ]
 }
